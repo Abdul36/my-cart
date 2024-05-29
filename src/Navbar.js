@@ -1,7 +1,17 @@
-import React from "react";
+// Navbar.js
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "react-use-cart";
 
-export default function Navbar() {
+export default function Navbar({ onSearch }) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const { totalItems } = useCart(); // Access the total items in the cart
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+    onSearch(e.target.value);
+  };
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,26 +37,17 @@ export default function Navbar() {
                   Home
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/cart"
+                >
+                  Cart ({totalItems})
+                </Link>
+              </li>
             </ul>
-            <form className="d-flex">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5 mx-5">
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/cart">
-                Cart
-              </Link>
-            </li>
-          </ul>
         </div>
       </nav>
     </div>

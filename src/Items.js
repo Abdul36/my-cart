@@ -1,15 +1,32 @@
-// Item.js
+// Items.js
 import React from "react";
 import { useCart } from "react-use-cart";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Items = (props) => {
   const { addItem } = useCart();
+
+  const handleAddToCart = (item) => {
+    console.log("Item added to cart:", item); // Log to check if the function is called
+    addItem(item);
+    toast.success("Item added successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
   return (
     <>
       <div className="col-11 col-md-6 col-lg-3">
         <div
           className="card p-0 overflow-hidden h-100 shadow"
-          style={{ width: "18rem", marginBottom: "20px" }} // Added margin bottom
+          style={{ width: "18rem", marginBottom: "20px" }}
         >
           <img
             src={props.img}
@@ -22,7 +39,7 @@ const Items = (props) => {
             <p className="card-text">{props.desc}</p>
             <button
               className="btn btn-primary"
-              onClick={() => addItem(props.item)}
+              onClick={() => handleAddToCart(props.item)}
             >
               Add to cart
             </button>

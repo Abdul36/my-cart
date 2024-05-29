@@ -1,3 +1,4 @@
+// App.js
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -6,14 +7,19 @@ import Cart from "./Cart";
 import Navbar from "./Navbar";
 import { CartProvider } from "react-use-cart";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
+import { useState } from "react";
 function App() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <>
-          <Navbar />
+          <Navbar onSearch={handleSearch} />
           <Home />
         </>
       ),
@@ -22,7 +28,7 @@ function App() {
       path: "/cart",
       element: (
         <>
-          <Navbar />
+          <Navbar onSearch={handleSearch} />
           <Cart />
         </>
       ),
