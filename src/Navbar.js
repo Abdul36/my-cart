@@ -16,8 +16,8 @@ export default function Navbar({ onSearch }) {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            Navbar
+          <Link className="navbar-brand text-primary" to="/">
+            RapidMart
           </Link>
           <button
             className="navbar-toggler"

@@ -51,7 +51,7 @@ const Cart = () => {
   };
 
   return (
-    <section className="py-4 mt-4 container">
+    <section className="py-4 container mt-5">
       <div className="row justify-content-center">
         <div className="col-12">
           <h5 className="mb-3"> Total Items ({totalItems})</h5>
@@ -133,6 +133,7 @@ const Cart = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
+                required // Make field compulsory
               />
             </div>
             <div className="form-group">
@@ -144,6 +145,7 @@ const Cart = () => {
                 name="phoneNumber"
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
+                required // Make field compulsory
               />
             </div>
             <div className="form-group">
@@ -155,6 +157,7 @@ const Cart = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
+                required // Make field compulsory
               />
             </div>
             <div className="form-group">
@@ -166,6 +169,7 @@ const Cart = () => {
                 name="address"
                 value={formData.address}
                 onChange={handleInputChange}
+                required // Make field compulsory
               />
             </div>
             <div className="form-group">
@@ -176,17 +180,14 @@ const Cart = () => {
                 name="deliveryMode"
                 value={formData.deliveryMode}
                 onChange={handleInputChange}
+                required // Make field compulsory
               >
                 <option value="">Select mode</option>
                 <option value="homeDelivery">Home Delivery</option>
                 <option value="pickUp">Pick Up</option>
               </select>
             </div>
-            <button
-              type="submit"
-              className="btn btn-primary mt-3"
-              style={{ padding: "8px 35px" }}
-            >
+            <button type="submit" className="btn btn-primary mt-4">
               Submit
             </button>
           </form>
