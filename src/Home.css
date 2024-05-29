@@ -1,0 +1,63 @@
+/* Home.css */
+/* 
+.home-container {
+    padding: 20px;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 70%;
+}
+
+.search-button {
+    width: 30%;
+} */
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-prev,
+.slick-next {
+    font-size: 20px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
+.item-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.item-title {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 5px;
+}
+
+.item-desc {
+    margin-top: 5px;
+}

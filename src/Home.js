@@ -1,10 +1,10 @@
-// Home.js
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Items from "./Items";
 import Data from "./Data";
+import "./Home.css"; // Import custom styles
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -31,28 +31,26 @@ export default function Home() {
   };
 
   return (
-    <>
-      <div className="container mt-4">
-        <div className="input-group">
-          <input
-            className="form-control"
-            type="text"
-            placeholder="Search"
-            aria-label="Search"
-            value={searchQuery}
-            onChange={handleSearch}
-          />
-          <button
-            className="btn btn-primary"
-            type="button"
-            onClick={handleButtonClick}
-          >
-            Search
-          </button>
-        </div>
+    <div className="container mt-4">
+      <div className="input-group">
+        <input
+          className="form-control"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+          value={searchQuery}
+          onChange={handleSearch}
+        />
+        <button
+          className="btn btn-primary"
+          type="button"
+          onClick={handleButtonClick}
+        >
+          Search
+        </button>
       </div>
       <h2 className="text-center mt-4 mb-4">Mobile Accessories</h2>
-      <section className="py-4 container ">
+      <section className="py-4 container">
         <Slider {...settings}>
           {filteredData.map((item, index) => (
             <div key={index}>
@@ -67,7 +65,6 @@ export default function Home() {
           ))}
         </Slider>
       </section>
-    </>
+    </div>
   );
 }
-// After
