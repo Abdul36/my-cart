@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useCart } from "react-use-cart";
 import { FaPlus, FaMinus, FaTrashAlt } from "react-icons/fa";
 import "./cart.css";
+import Button from "../../core/button";
 
 const Cart = () => {
   const {
+    isEmpty,
     updateItemQuantity,
     totalItems,
     items,
@@ -116,6 +118,7 @@ const Cart = () => {
           <button className="btn btn-success" onClick={handleCheckout}>
             Check Out
           </button>
+          <Button title="Check out" onClick={() => {}} />
         </div>
       </div>
 

@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Items from "./Items";
 import Data from "./Data";
-import "./Home.css"; // Import custom styles
+import "./Home.css";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,7 +14,6 @@ export default function Home() {
   };
 
   const handleButtonClick = () => {
-    // Add your logic here to perform some action when the button is clicked
     console.log("Button clicked!");
   };
 
